@@ -7,13 +7,11 @@ const ProgressChart = ({ habit }) => {
     datasets: [
       {
         label: "Progreso",
-        data: habit.progress,
-        borderColor: "teal",
-        backgroundColor: "rgba(56, 178, 172, 0.2)",
-        tension: 0.3,
+        // data: Array.isArray(habit.progress) ? habit.progress : habit.progress.split("").map((day) => Number(day)),
+        data: habit.progress.split("").map((day) => Number(day)),
       },
     ],
-  };
+  };  
 
   const options = {
     responsive: true,
